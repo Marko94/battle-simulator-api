@@ -1,0 +1,23 @@
+{
+  "name": "battle-simulator-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marko94/battle-simulator-api.git"
+  },
+  "author": "Marko Nenadovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marko94/battle-simulator-api/issues"
+  },
+  "homepage": "https://github.com/Marko94/battle-simulator-api#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
