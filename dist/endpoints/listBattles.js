@@ -24,20 +24,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = __importStar(require("express"));
 const postgreSQL_1 = __importDefault(require("../postgreSQL"));
-const Battle_1 = require("../models/Battle");
-const newBattle = {
-    status: Battle_1.BattleStatus.PREPARING,
-};
 const router = express.Router();
 router.use((req, res) => {
     const pool = (0, postgreSQL_1.default)();
-    return pool.query('INSERT INTO battles (status) VALUES ($1)', [newBattle.status], (error, results) => {
+    // we can also add pagination here, e.g. limit to n results so we don't fetch
+    return pool.query('SELECT * FROM battles ORDER BY id ASC', (error, results) => {
         if (error) {
+            res.status(500).json({ success: false, message: 'error' });
             throw error;
         }
+        console.log("Fetched battles");
         console.log(results);
-        return res.status(201).json({ success: true, message: 'ok' });
+        return res.status(201).json({ success: true, message: 'ok', body: results.rows });
     });
 });
 exports.default = router;
-//# sourceMappingURL=createNewBattle.js.map
+//# sourceMappingURL=listBattles.js.map

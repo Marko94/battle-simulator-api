@@ -1,15 +1,14 @@
-import Army from "./Army";
+import Army from './Army';
+
+export enum BattleStatus {
+  PREPARING= 'PREPARING',
+  READY= 'READY',
+  IN_PROGRESS= 'IN PROGRESS',
+  FINISHED= 'FINISHED',
+}
 
 export default interface Battle {
-  id: string;
+  id?: string;
   status: BattleStatus;
   armies: Army[];
-  zipCode: string;
-}
-
-enum BattleStatus {
-  PREPARING,
-  READY,
-  IN_PROGRESS,
-  FINISHED,
-}
+};
