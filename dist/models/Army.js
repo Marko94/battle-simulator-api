@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.AttackStrategy = void 0;
 var AttackStrategy;
 (function (AttackStrategy) {
-    AttackStrategy[AttackStrategy["RANDOM"] = 0] = "RANDOM";
-    AttackStrategy[AttackStrategy["WEAKEST"] = 1] = "WEAKEST";
-    AttackStrategy[AttackStrategy["STRONGEST"] = 2] = "STRONGEST";
-})(AttackStrategy || (AttackStrategy = {}));
+    AttackStrategy["RANDOM"] = "RANDOM";
+    AttackStrategy["WEAKEST"] = "WEAKEST";
+    AttackStrategy["STRONGEST"] = "STRONGEST";
+})(AttackStrategy = exports.AttackStrategy || (exports.AttackStrategy = {}));
 //# sourceMappingURL=Army.js.map

@@ -24,21 +24,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = __importStar(require("express"));
 const postgreSQL_1 = __importDefault(require("../postgreSQL"));
-const Battle_1 = require("../models/Battle");
-const newBattle = {
-    status: Battle_1.BattleStatus.PREPARING,
-    armies: [],
-};
 const router = express.Router();
-router.use((req, res) => {
+router.get('/:battleId', (req, res) => {
     const pool = (0, postgreSQL_1.default)();
-    return pool.query('INSERT INTO battles (status, armies) VALUES ($1, $2)', [newBattle.status, newBattle.armies], (error, results) => {
+    console.log("Battle ID: ", req.params.battleId);
+    return pool.query('SELECT * FROM battles WHERE id = ' + req.params.battleId, (error, result) => {
         if (error) {
+            res.status(500).json({ success: false, message: 'error' });
             throw error;
         }
-        console.log(results);
-        return res.status(201).json({ success: true, message: 'ok' });
+        console.log("Fetched battle " + req.params.battleId);
+        console.log(result);
+        return res.status(201).json({ success: true, message: 'success', body: result.rows });
     });
 });
 exports.default = router;
-//# sourceMappingURL=createNewBattle.js.map
+//# sourceMappingURL=fetchBattle.js.map

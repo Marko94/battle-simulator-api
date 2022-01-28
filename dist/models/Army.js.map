@@ -1,1 +1,1 @@
-{"version":3,"file":"Army.js","sourceRoot":"","sources":["../../src/models/Army.ts"],"names":[],"mappings":";;AAOA,IAAK,cAIJ;AAJD,WAAK,cAAc;IACjB,uDAAM,CAAA;IACN,yDAAO,CAAA;IACP,6DAAS,CAAA;AACX,CAAC,EAJI,cAAc,KAAd,cAAc,QAIlB"}
+{"version":3,"file":"Army.js","sourceRoot":"","sources":["../../src/models/Army.ts"],"names":[],"mappings":";;;AAOA,IAAY,cAIX;AAJD,WAAY,cAAc;IACxB,mCAAgB,CAAA;IAChB,qCAAkB,CAAA;IAClB,yCAAsB,CAAA;AACxB,CAAC,EAJW,cAAc,GAAd,sBAAc,KAAd,sBAAc,QAIzB"}
